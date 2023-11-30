@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 import sys
 
+if __name__ != "__main__":
+    exit()
+
 # Initialize the sum to 0
 total = 0
 
