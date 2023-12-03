@@ -1,44 +1,41 @@
 #include "lists.h"
+/**
+ * palindrome - check if is palindrome with recursion
+ * @l: l
+ * @r: r
+ *
+ * Return: 1 palindrome, 0 not palindrome
+ */
+int palindrome(listint_t **l, listint_t *r)
+{
+	int response;
+
+	if (r != NULL)
+	{
+		response = palindrome(l, r->next);
+		if (response != 0)
+		{
+			response = (r->n == (*l)->n);
+			*l = (*l)->next;
+			return (response);
+		}
+		return (0);
+
+	}
+	return (1);
+}
 
 /**
- * is_palindrome - checks if a singly linked list is a palindrome
- * @head: pointer to pointer of the head of the list
- * Return: 0 if not a palindrome, 1 if a palindrome
+ * is_palindrome - checks if a singly linked list is a palindrome.
+ * @head: head of linked list
+ *
+ * Return: 1 palindrome, 0 not palindrome
  */
 int is_palindrome(listint_t **head)
 {
-    if (*head == NULL || (*head)->next == NULL)
-        return (1);
-
-    listint_t *slow = *head;
-    listint_t *fast = *head;
-    listint_t *prev = NULL;
-    listint_t *temp;
-
-    while (fast != NULL && fast->next != NULL)
-    {
-        fast = fast->next->next;
-
-        /* Reverse the first half of the list while finding the middle */
-        temp = slow->next;
-        slow->next = prev;
-        prev = slow;
-        slow = temp;
-    }
-
-    /* If the linked list has an odd number of elements, skip the middle */
-    if (fast != NULL)
-        slow = slow->next;
-
-    /* Compare the reversed first half with the second half */
-    while (slow != NULL)
-    {
-        if (prev->n != slow->n)
-            return (0);
-
-        prev = prev->next;
-        slow = slow->next;
-    }
-
-    return (1); /* It's a palindrome */
+	if (head == NULL)
+	{
+		return (0);
+	}
+	return (palindrome(head, *head));
 }
