@@ -12,12 +12,14 @@ class Rectangle:
         height (int): vertical dimension of rectangle, defaults to 0
 
     """
+
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         # attribute assigment here engages setters defined below
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -153,3 +155,4 @@ class Rectangle:
         Prints a farewell message when an instance of Rectangle is deleted.
         """
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
