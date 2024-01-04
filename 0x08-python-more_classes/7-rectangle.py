@@ -140,7 +140,15 @@ class Rectangle:
         representation of the rectangle suitable for printing.
 
         """
-        return self._draw_rectangle()
+        if self.width == 0 or self.height == 0:
+            return ""
+        else:
+            result = ""
+            for i in range(self.height):
+                result += str(self.print_symbol) * self.width
+                if i < self.height - 1:
+                    result += "\n"
+            return result + "\n"
 
     def __repr__(self):
         """
