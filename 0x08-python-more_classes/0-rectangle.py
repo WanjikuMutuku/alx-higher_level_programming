@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+""" empty class Rectangle"""
+
 
 class Rectangle:
-    #This is an empty class
-    pass # an empty block
+    """ defines ar rectangle """
+    pass
