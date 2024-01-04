@@ -136,11 +136,12 @@ class Rectangle:
 
         """
         return self._draw_rectangle()
+
     def __repr__(self):
         """
         Generates a string representation of the Rectangle instance.
 
         Returns:
-        - str: String representation of the Rectangle instance to recreate it using eval().
+        - str: String instance to recreate it using eval().
         """
         return f"Rectangle({self.width}, {self.height})"
