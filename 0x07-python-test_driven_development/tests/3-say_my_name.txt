@@ -1,0 +1,26 @@
+# Test Case 1: Valid case with both first_name and last_name
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+# Test Case 2: Valid case with both first_name and last_name
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+# Test Case 3: Valid case with only first_name (last_name is an empty string)
+>>> say_my_name("Bob")
+My name is Bob
+
+# Test Case 4: Invalid case with first_name as an integer
+>>> try:
+...     say_my_name(12, "White")
+... except TypeError as e:
+...     str(e)
+'first_name must be a string'
+
+# Test Case 5: Invalid case with last_name as an integer
+>>> try:
+...     say_my_name("White", 12)
+... except TypeError as e:
+...     str(e)
+'last_name must be a string'
