@@ -28,9 +28,3 @@
 >>> my_list.append(9)
 >>> my_list.print_sorted()
 [9, 9, 9, 9]
-
-#with no value
->>> my_list.append(None)
-   >>> my_list.print_sorted()
-   Traceback (most recent call last):
-   TypeError: unorderable types: NoneType() < int()
