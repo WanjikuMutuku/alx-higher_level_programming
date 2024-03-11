@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function add(a, b) {
+function add (a, b) {
   return a + b;
 }
 
@@ -11,7 +11,7 @@ const num1 = parseInt(arg1);
 const num2 = parseInt(arg2);
 
 if (Number.isNaN(num1) || Number.isNaN(num2)) {
-  console.log("NaN");
+  console.log('NaN');
 } else {
   const result = add(num1, num2);
   console.log(result);
