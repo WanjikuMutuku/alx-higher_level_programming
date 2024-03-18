@@ -3,7 +3,7 @@
 script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa
 """
 import MySQLdb
-from sys import argv
+import sys
 
 if __name__ == "__main__":
     # command line arguments
@@ -19,8 +19,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # executing MYSQL tables
-    cursor.execute("SELECT * from states WHERE name\
-            LIKE BINARY 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT DISTINCT * FROM states WHERE name LIKE 'N%'")
 
     # fetch all rows returned by the query
     rows = cursor.fetchall()
