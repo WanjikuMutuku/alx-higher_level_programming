@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     # Execute the SQL query to retrieve the states
     cursor.execute("SELECT * FROM states WHERE name\
-            = %s ORDER BY id ASC", (state_name,))
+            LIKE BINARY '{}'".format(state_name))
 
     # Fetch all the rows returned by the query
     rows = cursor.fetchall()
