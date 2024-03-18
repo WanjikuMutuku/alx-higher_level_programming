@@ -19,7 +19,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # executing MYSQL tables
-    cursor.execute("SELECT DISTINCT * FROM states WHERE name LIKE 'N%'")
+    cursor.execute("SELECT DISTINCT * FROM states WHERE name LIKE BINARY 'N%'")
 
     # fetch all rows returned by the query
     rows = cursor.fetchall()
