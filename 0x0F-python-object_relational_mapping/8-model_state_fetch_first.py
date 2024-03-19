@@ -23,8 +23,8 @@ if __name__ == "__main__":
     state = session.query(State).order_by(State.id).first()
 
     # Print the result
-    if state:
-        print("{}: {}".format(s_tate.id, s_tate.name))
+    if state in States:
+        print("{}: {}".format(state.id, state.name))
     else:
         print("Nothing")
     # Close the session
