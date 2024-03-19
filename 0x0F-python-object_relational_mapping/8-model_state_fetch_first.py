@@ -14,8 +14,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
 
     # create session factory
-    Session = sessionmaker()
-    session = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=engine)
 
     # create session
     session = Session()
@@ -24,8 +23,9 @@ if __name__ == "__main__":
     state = session.query(State).order_by(State.id).first()
 
     # Print the result
-    if state is not None:
-        print("{}: {}".format(state.id, state.name))
-
+    if state:
+        print("{}: {}".format(s_tate.id, s_tate.name))
+    else:
+        print("Nothing")
     # Close the session
     session.close()
