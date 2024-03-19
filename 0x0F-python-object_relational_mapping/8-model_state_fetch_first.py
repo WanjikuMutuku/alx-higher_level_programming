@@ -14,7 +14,8 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
 
     # create session factory
-    Session = sessionmaker(bind=engine)
+    Session = sessionmaker()
+    session = sessionmaker(bind=engine)
 
     # create session
     session = Session()
